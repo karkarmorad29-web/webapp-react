@@ -1,3 +1,5 @@
+# Cookbook
+
 -Avvio scaffold Javascript + React da Vite
 `npm create vite@latest .`
 -Rimozione asset inutilizzati sotto public e src/assets.
@@ -20,6 +22,7 @@ a {
   text-decoration: none;
 }`
 
+-Svuotato app.jsx. Rimosso import dei vari file e creazione di state. Tenuto solo un <h1>.
 
 
 

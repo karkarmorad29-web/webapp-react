@@ -14,3 +14,7 @@ a {
   color: #007bff;
   text-decoration: none;
 }
+
+.page {
+  padding: 1rem;
+}
