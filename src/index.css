@@ -6,7 +6,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: black;
+  background-color: #430c0c;
   color: white;
 }
 
@@ -15,6 +15,33 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: aqua;
+}
+
 .page {
   padding: 1rem;
+}
+
+.header {
+  background-color: #333;
+  padding: 2rem;
+  border-bottom: solid 1px #555;
+  display: flex;
+  gap: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #555;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: calc(25% - 1rem);
 }

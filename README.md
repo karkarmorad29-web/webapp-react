@@ -1,10 +1,10 @@
 # Cookbook
 
--Avvio scaffold Javascript + React da Vite
+- Avvio scaffold Javascript + React da Vite
 `npm create vite@latest .`
--Rimozione asset inutilizzati sotto public e src/assets.
--Rimozione App.css tenendo come la prencipale Index.css
--Pulizzia Index.css scrivendo il solito reset
+- Rimozione asset inutilizzati sotto public e src/assets.
+- Rimozione App.css tenendo come la prencipale Index.css
+- Pulizzia Index.css scrivendo il solito reset
 `* {
   margin: 0;
   padding: 0;
@@ -22,7 +22,38 @@ a {
   text-decoration: none;
 }`
 
--Svuotato app.jsx. Rimosso import dei vari file e creazione di state. Tenuto solo un <h1>.
+- Svuotato app.jsx. Rimosso import dei vari file e creazione di state. Tenuto solo un <h1>.
+
+- Instalazzione react-router-dom
+`npm i react-router-dom`
+-In App.jsx:
+```
+import { useState } from 'react'
+import HomePage from './pages/HomePage'
+import FilmPage from './pages/FilmPage'
+import FilmsPage from './pages/FilmsPage'
+import DefaultLayout from './layouts/DefaultLayout'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DefaultLayout />} >
+            <Route index element={<HomePage />} />
+            <Route path="films" element={<FilmsPage />} />
+            <Route path="films/:id" element={<FilmPage />} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+    </>
+  )
+  ```
+  - Creazione di <Header> (/components/Header.jsx) che usa <Link>
+  - Creazione di layout (/layouts/DefaultLayout.jsx) con <Outlet> e <Header>
+  - Creazione componenti di pagina (/pages/*page.jsx)
 
 
 
