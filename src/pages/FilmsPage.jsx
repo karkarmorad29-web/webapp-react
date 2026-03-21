@@ -8,8 +8,15 @@ function FilmsPage() {
         title: "Il Signore degli Anelli",
         director: "Peter Jackson",
         description: "Un giovane hobbit deve distruggere un anello per salvare il mondo della fantasia.",
-        image: "https://example.com/lotr.jpg"
+        image: "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg"
+
     };
+
+    const films = [
+        film,
+        film
+    ];
+
 
     return <>
         <h1> Catalogo Films Page</h1>
@@ -18,7 +25,16 @@ function FilmsPage() {
 
 
         <div className="cards-container">
-            <FilmCard film={film} />
+
+            {films.map(film => <FilmCard film={film} />)}
+
+
+
+
+
+
+
+
 
         </div>
     </>

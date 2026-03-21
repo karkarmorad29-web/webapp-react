@@ -54,6 +54,9 @@ return (
   - Creazione di <Header> (/components/Header.jsx) che usa <Link>
   - Creazione di layout (/layouts/DefaultLayout.jsx) con <Outlet> e <Header>
   - Creazione componenti di pagina (/pages/*page.jsx)
+  - Creazione Card
+  - Un legero codice di Index.css
+  - Creazione il MAP alle Card
 
 
 

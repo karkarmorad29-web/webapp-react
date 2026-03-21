@@ -43,5 +43,27 @@ a:hover {
   background-color: #555;
   padding: 1rem;
   border-radius: 0.5rem;
-  width: calc(25% - 1rem);
+  width: calc(22% - 1rem);
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.card h2,
+.card h3,
+.card p {
+  margin-bottom: 0.75rem;
+}
+
+.film-detail {
+  background-color: #555;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.film-detail img {
+  width: 100%;
+  margin-bottom: 1rem;
 }
