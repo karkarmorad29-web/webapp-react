@@ -13,7 +13,7 @@ function FilmsPage() {
     const [films, setFilms] = useState([]);
 
     useEffect(() => {
-        axios.get("https://localhost:3000/api/films").then(response => {
+        axios.get("/api/movies").then(response => {
             console.log(response.data);
             setFilms(response.data);
         }).catch(error => {
