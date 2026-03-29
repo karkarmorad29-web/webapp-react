@@ -1,21 +1,26 @@
 
 import FilmCard from "../components/FilmCard";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+
+
+
 
 function FilmsPage() {
 
-    const film = {
-        id: 1,
-        title: "Il Signore degli Anelli",
-        director: "Peter Jackson",
-        description: "Un giovane hobbit deve distruggere un anello per salvare il mondo della fantasia.",
-        image: "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg"
 
-    };
+    const [films, setFilms] = useState([]);
 
-    const films = [
-        film,
-        film
-    ];
+    useEffect(() => {
+        axios.get("https://localhost:3000/api/films").then(response => {
+            console.log(response.data);
+            setFilms(response.data);
+        }).catch(error => {
+            console.error("Errore nella richiesta:", error);
+        });
+    }, []);
+
 
 
     return <>
@@ -27,15 +32,6 @@ function FilmsPage() {
         <div className="cards-container">
 
             {films.map(film => <FilmCard film={film} />)}
-
-
-
-
-
-
-
-
-
         </div>
     </>
 }

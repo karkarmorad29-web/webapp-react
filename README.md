@@ -57,6 +57,8 @@ return (
   - Creazione Card
   - Un legero codice di Index.css
   - Creazione il MAP alle Card
+  - Creazione RiviewCard.jsx
+  - installazione axios e importato in FilmsPage.jsx
 
 
 
