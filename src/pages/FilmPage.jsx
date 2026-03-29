@@ -6,13 +6,13 @@ import axios from "axios";
 
 function FilmPage() {
 
-    const [film, setFilm] = useState([]);
+    const [movie, setMovie] = useState([]);
 
 
     useEffect(() => {
-        axios.get("/api/films/<FILM_ID>").then(response => {
+        axios.get("http://localhost:3000/api/movies").then(response => {
             console.log(response.data);
-            setFilm(response.data);
+            setMovie(response.data);
         }).catch(error => {
             console.error("Errore nella richiesta:", error);
         });
