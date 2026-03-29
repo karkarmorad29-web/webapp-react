@@ -10,7 +10,7 @@ function FilmPage() {
 
 
     useEffect(() => {
-        axios.get("/api/movies").then(response => {
+        axios.get("http://localhost:3000/api/movies/1").then(response => {
             console.log(response.data);
             setMovie(response.data);
         }).catch(error => {
@@ -23,10 +23,10 @@ function FilmPage() {
         <h1>Film Page</h1>
         <p>Welcome to the Film Page!</p>
 
-
+        {movie.title}
 
         <div className="cards-container">
-            {reviews.map(review => <ReviewCard review={review} />)}
+            {movie.reviews?.map(review => <ReviewCard review={review} />)}
 
         </div>
     </>
