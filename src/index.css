@@ -29,7 +29,43 @@ a:hover {
   padding: 2rem;
   border-bottom: solid 1px #555;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav {
+  display: flex;
   gap: 1rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
 }
 
 .cards-container {
@@ -66,4 +102,19 @@ a:hover {
 .film-detail img {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.trailer-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.trailer-btn:hover {
+  background-color: #0056b3;
 }

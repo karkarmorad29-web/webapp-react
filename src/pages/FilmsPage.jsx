@@ -2,6 +2,7 @@
 import FilmCard from "../components/FilmCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 
 
@@ -11,6 +12,8 @@ function FilmsPage() {
 
 
     const [films, setFilms] = useState([]);
+    const [searchParams] = useSearchParams();
+    const searchQuery = searchParams.get("search") || "";
 
     useEffect(() => {
         axios.get("http://localhost:3000/api/movies").then(response => {
@@ -21,17 +24,22 @@ function FilmsPage() {
         });
     }, []);
 
+    const filteredFilms = films.filter(film =>
+        film.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        film.director.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
 
 
     return <>
         <h1> Catalogo Films Page</h1>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, commodi.</p>
 
-
+        {searchQuery && <p>Risultati per: "{searchQuery}"</p>}
 
         <div className="cards-container">
 
-            {films.map(film => <FilmCard key={film.id} film={film} />)}
+            {filteredFilms.map(film => <FilmCard key={film.id} film={film} />)}
         </div>
     </>
 }
