@@ -9,7 +9,22 @@ function ReviewCard({ review }) {
 
     return <div className="card">
         <h2>{name}</h2>
-        <h3>Vote: {vote}</h3>
+        <div>
+
+
+            {[1, 2, 3, 4, 5].map(star => (
+                <i key={star} className={"fa-star " + (vote >= star ? "fa-solid" : "fa-regular")}></i>
+            ))}
+
+
+            {/* <i className={"fa-star " + (vote >= 1 ? "fa-solid" : "fa-regular")}></i>
+            <i className={"fa-star " + (vote >= 2 ? "fa-solid" : "fa-regular")}></i>
+            <i className={"fa-star " + (vote >= 3 ? "fa-solid" : "fa-regular")}></i>
+            <i className={"fa-star " + (vote >= 4 ? "fa-solid" : "fa-regular")}></i>
+            <i className={"fa-star " + (vote >= 5 ? "fa-solid" : "fa-regular")}></i>
+                */}
+
+        </div>
         <p>{text}</p>
     </div>
 }

@@ -31,7 +31,7 @@ function FilmsPage() {
 
         <div className="cards-container">
 
-            {films.map(film => <FilmCard film={film} />)}
+            {films.map(film => <FilmCard key={film.id} film={film} />)}
         </div>
     </>
 }
